@@ -33,8 +33,8 @@ app.get('/api/timestamp', (req, res) => {
 })
 
 app.get('/api/timestamp/:date_string', (req, res) => {
-  const date_string2 = req.params.date_string.split('-').length > 1 ? req.params.date_string : parseInt(req.params.date_string)
-  const date = new Date(date_string2)
+  const date_string = req.params.date_string.split('-').length > 1 ? req.params.date_string : parseInt(req.params.date_string)
+  const date = new Date(date_string)
 
   if (date.toUTCString() == "Invalid Date") {
     res.json({
